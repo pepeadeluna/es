@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pepe Álvarez de Luna</title>
+
+    <link rel="icon" href="https://html5rocket.github.io/assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,600,700,900" rel="stylesheet"></head>
+<body>
+    <nav>
+       <a class="brandName scrollLink" scrolllink="#header">Pepe Álvarez de luna</a>
+        <button class="menuButton">
+            <svg class="menuIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
+            <svg class="closeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M23 20.168l-8.185-8.187 8.185-8.174-2.832-2.807-8.182 8.179-8.176-8.179-2.81 2.81 8.186 8.196-8.186 8.184 2.81 2.81 8.203-8.192 8.18 8.192z"/></svg>
+        </button>
+        <ul>
+            <a class="scrollLink" scrolllink="#about">Inicio</a
+            ><a class="scrollLink" scrolllink="#template">Sobre mi</a
+            ><a class="scrollLink" scrolllink="#download">Mis proyectos</a
+            ><a class="scrollLink" scrolllink="#contact">Contacto</a>
+        </ul>
+    </nav>
+    <header id="header">
+        <h1>Pepe álvarez de luna<br></h1>
+        <ul class="takeActionBtns">
+            <a scrolllink="#about" class="learnMore scrollLink">Sobre mi</a>
+
+        </ul>
+    </header>
+    
+    <section id="about">
+        <h1 class="headerLine">Sobre Mi</h1>
+        <div class="lineContainer"><div class="line"></div></div>
+        <p>Mi nombre es José Manuel Álvarez Luna Ornedo.
+
+            A pesar de mi discapacidad física mi vida gira en torno al ámbito audiovisual, llevaba desde los 16 años editando vídeos como hobby y por eso decidí hacer una formación para poder dedicarme profesionalmente a lo que me apasiona. Actualmente soy graduado en Técnico Superior en Realización de Proyectos Audiovisuales y Espectáculos
+            
+            Si hay algo que me diferencia es mi actitud, no paro hasta lograr cualquier objetivo que me proponga.</p>
+        <br>
+        <a scrolllink="#template" class="learnMore scrollLink">Mis Proyectos</a>
+    </section>
+    
+    <section id="template">
+        <h1 class="headerLine">Mis Proyectos</h1>
+        <div class="lineContainer"><div class="line"></div></div>
+        <div class="row">
+            <div class="col-auto bg-danger p-5 text-center">
+                <!-- Video 1 -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/jSbf-CI8CPc?si=UfRElc2sB3-UvYvw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="col-auto bg-danger p-5 text-center">
+               <!-- Video 2 -->
+               <iframe width="560" height="315" src="https://www.youtube.com/embed/--l1Uq5Hmio?si=VXlvzJJHe7D8YlR0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <section id="contact">
+        <h1 class="headerLine">Más información</h1>
+        <div class="lineContainer"><div class="line"></div></div>
+        <p class="desc">Te dejo mis redes sociales para que puedas contactarme</p>
+        <ul class="contactInfo">
+            <li>
+                <img src="https://assets.stickpng.com/images/5ecec78673e4440004f09e77.png" width="64" height="64"><br></a>
+                <a href="http://www.instagram.com/pepeadeluna"><p>@pepeadeluna</p></a>
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+                <br>
+                <p><a href="mailto:pepeadeluna@outlook.com" target="_top">Correo eléctronico</a></p>
+            </li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p class="copyright">&copy; Pepe Álvarez de Luna</p>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script>
+    
+    // Nav Header Class Type Checking (nav has white background when not on top of page)
+    window.onscroll = checkNavClassNameHeaderType;
+    window.onload = checkNavClassNameHeaderType;
+
+    function checkNavClassNameHeaderType(){
+        if(document.getElementsByTagName("html")[0].scrollTop > 0){
+            $("nav").addClass("nonTopNav");
+        }else{
+            $("nav").removeClass("nonTopNav");;
+        }
+    }
+
+    // Mobile Nav Menu Link Toggle Button Functionality
+    $("nav button.menuButton").on("click",function(){
+        $("body").toggleClass("activeNavLinks");
+    });
+
+    // Scroll Link Functionality
+    $(".scrollLink").on("click",function(){
+        $("body").removeClass("activeNavLinks");
+        var scrollTo = this.getAttribute("scrolllink");
+        if(window.innerWidth <= 500){
+            $('html, body').animate({scrollTop: $(scrollTo).offset().top - 65}, 600,'easeInOutExpo');
+        }else{
+            $('html, body').animate({scrollTop: $(scrollTo).offset().top - 50}, 600,'easeInOutExpo');
+        }
+    });
+
+    </script>
+</body>
+</html>

@@ -313,9 +313,10 @@ section#about {
 }
 section#about p {
     /*width: 500px;*/
+    /*display: inline-block;*/
     /*margin-bottom: 50px;*/
     width: 400px;
-    display: inline-block;
+    display: inline;
     margin-bottom: 250px;
 }
 section#about a {

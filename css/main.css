@@ -312,9 +312,11 @@ section#about {
     text-align: center;
 }
 section#about p {
+    /*width: 500px;*/
+    /*margin-bottom: 50px;*/
     width: 400px;
     display: inline-block;
-    margin-bottom: 25px;
+    margin-bottom: 250px;
 }
 section#about a {
     height: 55px;
